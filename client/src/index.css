@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-void: #0a0b10;
+  --color-surface: #131722;
+  --color-surface-light: #181d2c;
+  --color-border-dim: #1f293d;
+  --color-portal: #00ff88;
+  --color-portal-glow: #39ff14;
+  --color-cyan: #57c7ff;
+  --color-cyan-bright: #00d2ff;
+  --color-amber: #ffb86c;
+  --color-danger: #ff5555;
+  --color-text-bright: #e6edf3;
+  --color-text-muted: #768390;
+}
+
+/* Tabular numerals & code ligatures */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(19, 23, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Hyprland active tiled panel gradient border */
+.hypr-active-border {
+  border: 2px solid transparent;
+  background-image: linear-gradient(rgba(19, 23, 34, 0.95), rgba(19, 23, 34, 0.95)),
+    linear-gradient(135deg, #00ff88, #57c7ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 16px rgba(0, 255, 136, 0.15);
+}
+
+.hypr-inactive-border {
+  border: 1px solid #1f293d;
+}
+
+/* Custom Arch Rice scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0b10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f293d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #57c7ff;
+}
+
+/* Neon Green / Cyan Pulse Skeleton */
+@keyframes neonSkeletonPulse {
+  0%, 100% {
+    background-color: rgba(31, 41, 61, 0.5);
+    border-color: rgba(31, 41, 61, 0.8);
+  }
+  50% {
+    background-color: rgba(0, 255, 136, 0.12);
+    border-color: rgba(87, 199, 255, 0.3);
+  }
+}
+
+.skeleton-neon {
+  animation: neonSkeletonPulse 1.8s ease-in-out infinite;
+  border: 1px solid rgba(31, 41, 61, 0.6);
+}
